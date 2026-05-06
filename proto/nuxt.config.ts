@@ -12,7 +12,13 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
+    '/jadwal': { prerender: true },
+    '/edukasi': { prerender: true },
+    '/setor': { prerender: true },
+    '/laporan': { prerender: true },
+    '/poin': { prerender: true },
+    '/profil': { prerender: true }
   },
 
   compatibilityDate: '2025-01-15',
