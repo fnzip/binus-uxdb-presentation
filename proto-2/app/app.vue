@@ -7,71 +7,71 @@ useHead({
     { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: 'id'
   }
 })
 
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+const title = 'ShopSync — Belanja Pintar'
+const description = 'Fitur AI Smart Shopping untuk pengalaman belanja online yang pintar, cepat, dan terpercaya.'
 
 useSeoMeta({
   title,
   description,
   ogTitle: title,
-  ogDescription: description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
-  twitterCard: 'summary_large_image'
+  ogDescription: description
 })
 </script>
 
 <template>
   <UApp>
-    <UHeader>
-      <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
-        </NuxtLink>
-
-        <TemplateMenu />
-      </template>
-
-      <template #right>
-        <UColorModeButton />
-
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
-      </template>
-    </UHeader>
-
     <UMain>
       <NuxtPage />
     </UMain>
 
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
-    <UFooter>
-      <template #left>
-        <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
-        </p>
-      </template>
-
-      <template #right>
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
-      </template>
-    </UFooter>
+    <!-- Mobile Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 z-50 lg:hidden">
+      <div class="flex items-center justify-around py-2">
+        <NuxtLink
+          to="/"
+          class="flex flex-col items-center gap-1 px-3 py-1 text-gray-500 hover:text-primary"
+          active-class="text-primary"
+        >
+          <UIcon name="i-lucide-home" class="text-xl" />
+          <span class="text-[10px] font-medium">Home</span>
+        </NuxtLink>
+        <NuxtLink
+          to="/pencarian"
+          class="flex flex-col items-center gap-1 px-3 py-1 text-gray-500 hover:text-primary"
+          active-class="text-primary"
+        >
+          <UIcon name="i-lucide-search" class="text-xl" />
+          <span class="text-[10px] font-medium">Cari</span>
+        </NuxtLink>
+        <NuxtLink
+          to="/keranjang"
+          class="flex flex-col items-center gap-1 px-3 py-1 text-gray-500 hover:text-primary"
+          active-class="text-primary"
+        >
+          <UIcon name="i-lucide-shopping-cart" class="text-xl" />
+          <span class="text-[10px] font-medium">Keranjang</span>
+        </NuxtLink>
+        <NuxtLink
+          to="/pesanan"
+          class="flex flex-col items-center gap-1 px-3 py-1 text-gray-500 hover:text-primary"
+          active-class="text-primary"
+        >
+          <UIcon name="i-lucide-package" class="text-xl" />
+          <span class="text-[10px] font-medium">Pesanan</span>
+        </NuxtLink>
+        <NuxtLink
+          to="/profil"
+          class="flex flex-col items-center gap-1 px-3 py-1 text-gray-500 hover:text-primary"
+          active-class="text-primary"
+        >
+          <UIcon name="i-lucide-user" class="text-xl" />
+          <span class="text-[10px] font-medium">Profil</span>
+        </NuxtLink>
+      </div>
+    </nav>
   </UApp>
 </template>
