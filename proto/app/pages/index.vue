@@ -15,7 +15,7 @@ const quickActions = [
 ]
 
 const tips = [
-  'Kulit pisang bisa jadi kompos dalam 2 minggu! 🍌',
+  'Kulit pisang bisa jadi kompos dalam 2 minggu!',
   'Botol plastik yang bersih bernilai lebih tinggi di Bank Sampah.',
   'Minyak jelantah jangan dibuang ke selokan — bisa didaur ulang jadi biodiesel!',
   'Pisahkan tutup botol dari botolnya — keduanya didaur ulang berbeda.'
@@ -37,26 +37,37 @@ const recentActivity = [
       <div class="max-w-4xl mx-auto">
         <div class="flex items-center justify-between mb-4">
           <div>
-            <h1 class="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-              Halo, Budi! 👋
+            <h1 class="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+              Halo, Budi!
+              <UIcon
+                name="i-lucide-hand-metal"
+                class="text-primary"
+              />
             </h1>
             <p class="text-gray-600 dark:text-gray-300 mt-1">
               Selamat datang di EcoLink Community
             </p>
           </div>
-          <div class="text-right">
-            <UBadge
-              color="primary"
-              size="lg"
-              variant="subtle"
-            >
-              <UIcon
-                name="i-lucide-coins"
-                class="mr-1"
-              />
-              {{ poin.toLocaleString() }} Poin
-            </UBadge>
+          <div class="hidden lg:block">
+            <UndrawIllustration
+              src="https://illustrations.popsy.co/red/package-delivery.svg"
+              alt="EcoLink Recycling"
+              width="120px"
+            />
           </div>
+        </div>
+        <div class="flex items-center justify-end mb-4">
+          <UBadge
+            color="primary"
+            size="lg"
+            variant="subtle"
+          >
+            <UIcon
+              name="i-lucide-coins"
+              class="mr-1"
+            />
+            {{ poin.toLocaleString() }} Poin
+          </UBadge>
         </div>
 
         <!-- Next Schedule Card -->

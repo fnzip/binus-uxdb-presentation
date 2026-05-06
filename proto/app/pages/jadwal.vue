@@ -50,19 +50,31 @@ const typeColors: Record<string, string> = {
           color="success"
           variant="subtle"
         >
-          🟢 Organik
+          <UIcon
+            name="i-lucide-leaf"
+            class="mr-1"
+          />
+          Organik
         </UBadge>
         <UBadge
           color="info"
           variant="subtle"
         >
-          🔵 Anorganik
+          <UIcon
+            name="i-lucide-package"
+            class="mr-1"
+          />
+          Anorganik
         </UBadge>
         <UBadge
           color="error"
           variant="subtle"
         >
-          🔴 B3 / Khusus
+          <UIcon
+            name="i-lucide-alert-triangle"
+            class="mr-1"
+          />
+          B3 / Khusus
         </UBadge>
       </div>
     </section>

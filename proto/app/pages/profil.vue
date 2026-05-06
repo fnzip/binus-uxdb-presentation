@@ -19,12 +19,12 @@ const stats = {
 }
 
 const badges = [
-  { name: 'Pemilah Pemula', icon: '🌱', earned: true },
-  { name: 'Setoran Pertama', icon: '♻️', earned: true },
-  { name: 'Quiz Master', icon: '🧠', earned: true },
-  { name: 'Pelapor Aktif', icon: '📢', earned: true },
-  { name: 'Eco Warrior', icon: '🌍', earned: false },
-  { name: '100kg Club', icon: '💪', earned: false }
+  { name: 'Pemilah Pemula', icon: 'i-lucide-sprout', earned: true },
+  { name: 'Setoran Pertama', icon: 'i-lucide-recycle', earned: true },
+  { name: 'Quiz Master', icon: 'i-lucide-brain', earned: true },
+  { name: 'Pelapor Aktif', icon: 'i-lucide-megaphone', earned: true },
+  { name: 'Eco Warrior', icon: 'i-lucide-globe', earned: false },
+  { name: '100kg Club', icon: 'i-lucide-dumbbell', earned: false }
 ]
 
 const notifSettings = reactive({
@@ -42,8 +42,11 @@ const notifSettings = reactive({
     <section class="bg-gradient-to-r from-red-50 to-rose-50 dark:from-red-950 dark:to-rose-950 px-4 py-6">
       <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-4">
-          <div class="w-16 h-16 rounded-full bg-red-200 dark:bg-red-800 flex items-center justify-center text-3xl">
-            👨
+          <div class="w-16 h-16 rounded-full bg-red-200 dark:bg-red-800 flex items-center justify-center">
+            <UIcon
+              name="i-lucide-user"
+              class="text-3xl text-red-700 dark:text-red-200"
+            />
           </div>
           <div>
             <h1 class="text-xl font-bold text-gray-900 dark:text-white">
@@ -120,7 +123,11 @@ const notifSettings = reactive({
             ? 'bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800'
             : 'bg-gray-50 dark:bg-gray-800 opacity-50'"
         >
-          <span class="text-2xl">{{ badge.icon }}</span>
+          <UIcon
+            :name="badge.icon"
+            class="text-2xl"
+            :class="badge.earned ? 'text-primary' : 'text-gray-400'"
+          />
           <p
             class="text-xs font-medium mt-1"
             :class="badge.earned ? 'text-gray-900 dark:text-white' : 'text-gray-400'"

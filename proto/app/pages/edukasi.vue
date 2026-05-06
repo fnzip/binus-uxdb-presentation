@@ -105,7 +105,10 @@ function nextQuestion() {
         >
           <div class="space-y-3">
             <div class="flex items-center gap-3">
-              <span class="text-2xl">{{ category.icon }}</span>
+              <UIcon
+                :name="category.icon"
+                class="text-2xl text-primary"
+              />
               <div>
                 <h3 class="font-bold text-gray-900 dark:text-white">
                   {{ category.name }}
@@ -140,10 +143,18 @@ function nextQuestion() {
               class="!p-3 bg-gray-50 dark:bg-gray-800"
             >
               <p class="text-sm">
-                <strong>💡 Tips:</strong> {{ category.tips }}
+                <UIcon
+                  name="i-lucide-lightbulb"
+                  class="inline text-amber-500"
+                />
+                <strong> Tips:</strong> {{ category.tips }}
               </p>
               <p class="text-sm mt-1">
-                <strong>🗑️ Buang ke:</strong> {{ category.disposal }}
+                <UIcon
+                  name="i-lucide-trash-2"
+                  class="inline text-gray-500"
+                />
+                <strong> Buang ke:</strong> {{ category.disposal }}
               </p>
             </UCard>
           </div>
@@ -217,8 +228,9 @@ function nextQuestion() {
               v-else
               class="w-full text-center py-4"
             >
-              <p class="text-lg font-bold text-primary">
-                🎉 Quiz Selesai!
+              <p class="text-lg font-bold text-primary flex items-center justify-center gap-2">
+                <UIcon name="i-lucide-party-popper" />
+                Quiz Selesai!
               </p>
               <p class="text-gray-600 dark:text-gray-300">
                 Skor akhir: {{ score }} / {{ quizQuestions.length }}
@@ -239,12 +251,11 @@ function nextQuestion() {
     >
       <UCard class="text-center">
         <div class="py-8 space-y-4">
-          <div class="w-24 h-24 mx-auto rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-            <UIcon
-              name="i-lucide-camera"
-              class="text-4xl text-primary"
-            />
-          </div>
+          <UndrawIllustration
+            src="https://illustrations.popsy.co/red/looking-at-the-map.svg"
+            alt="AI Scan Sampah"
+            width="200px"
+          />
           <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
             Scan Sampah
           </h3>

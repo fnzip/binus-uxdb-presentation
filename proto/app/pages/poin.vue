@@ -3,14 +3,14 @@ const saldo = ref(1250)
 const nilaiRupiah = computed(() => saldo.value * 10)
 
 const leaderboard = ref([
-  { rank: 1, nama: 'Ibu Ani', poin: 3200, avatar: '👩' },
-  { rank: 2, nama: 'Budi', poin: 1250, avatar: '👨', isMe: true },
-  { rank: 3, nama: 'Pak Darto', poin: 980, avatar: '👴' },
-  { rank: 4, nama: 'Mbak Rina', poin: 870, avatar: '👩‍🦱' },
-  { rank: 5, nama: 'Mas Joko', poin: 750, avatar: '🧑' },
-  { rank: 6, nama: 'Ibu Siti', poin: 620, avatar: '👩‍🦳' },
-  { rank: 7, nama: 'Pak Heru', poin: 540, avatar: '👨‍🦰' },
-  { rank: 8, nama: 'Dina', poin: 430, avatar: '👧' }
+  { rank: 1, nama: 'Ibu Ani', poin: 3200, icon: 'i-lucide-user' },
+  { rank: 2, nama: 'Budi', poin: 1250, icon: 'i-lucide-user', isMe: true },
+  { rank: 3, nama: 'Pak Darto', poin: 980, icon: 'i-lucide-user' },
+  { rank: 4, nama: 'Mbak Rina', poin: 870, icon: 'i-lucide-user' },
+  { rank: 5, nama: 'Mas Joko', poin: 750, icon: 'i-lucide-user' },
+  { rank: 6, nama: 'Ibu Siti', poin: 620, icon: 'i-lucide-user' },
+  { rank: 7, nama: 'Pak Heru', poin: 540, icon: 'i-lucide-user' },
+  { rank: 8, nama: 'Dina', poin: 430, icon: 'i-lucide-user' }
 ])
 
 const riwayatPoin = ref([
@@ -23,10 +23,10 @@ const riwayatPoin = ref([
 ])
 
 const ewalletOptions = [
-  { name: 'GoPay', icon: '💚', min: 500 },
-  { name: 'OVO', icon: '💜', min: 500 },
-  { name: 'Dana', icon: '💙', min: 500 },
-  { name: 'ShopeePay', icon: '🧡', min: 1000 }
+  { name: 'GoPay', icon: 'i-lucide-wallet', min: 500 },
+  { name: 'OVO', icon: 'i-lucide-credit-card', min: 500 },
+  { name: 'Dana', icon: 'i-lucide-banknote', min: 500 },
+  { name: 'ShopeePay', icon: 'i-lucide-shopping-bag', min: 1000 }
 ]
 
 const showRedeem = ref(false)
@@ -132,7 +132,7 @@ function tukarPoin() {
                 : 'border-gray-200 dark:border-gray-700 hover:border-primary'"
               @click="selectedWallet = wallet.name"
             >
-              <span class="text-2xl">{{ wallet.icon }}</span>
+              <span class="text-2xl"><UIcon :name="wallet.icon" /></span>
               <p class="text-sm font-medium mt-1">
                 {{ wallet.name }}
               </p>
@@ -195,9 +195,28 @@ function tukarPoin() {
                 'text-amber-600': user.rank === 3
               }"
             >
-              {{ user.rank <= 3 ? ['🥇', '🥈', '🥉'][user.rank - 1] : `#${user.rank}` }}
+              <UIcon
+                v-if="user.rank === 1"
+                name="i-lucide-medal"
+              />
+              <UIcon
+                v-else-if="user.rank === 2"
+                name="i-lucide-medal"
+              />
+              <UIcon
+                v-else-if="user.rank === 3"
+                name="i-lucide-medal"
+              />
+              <template v-else>
+                #{{ user.rank }}
+              </template>
             </span>
-            <span class="text-xl">{{ user.avatar }}</span>
+            <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+              <UIcon
+                :name="user.icon"
+                class="text-gray-600 dark:text-gray-300"
+              />
+            </div>
             <div class="flex-1">
               <p class="text-sm font-medium text-gray-900 dark:text-white">
                 {{ user.nama }}
