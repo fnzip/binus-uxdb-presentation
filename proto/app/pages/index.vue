@@ -33,7 +33,7 @@ const recentActivity = [
 <template>
   <div class="pb-20 lg:pb-0">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-950 dark:to-emerald-900 px-4 py-8 lg:py-12">
+    <section class="bg-gradient-to-br from-red-50 to-rose-100 dark:from-red-950 dark:to-rose-900 px-4 py-8 lg:py-12">
       <div class="max-w-4xl mx-auto">
         <div class="flex items-center justify-between mb-4">
           <div>
@@ -62,7 +62,7 @@ const recentActivity = [
         <!-- Next Schedule Card -->
         <UCard class="mt-4">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+            <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center">
               <UIcon
                 name="i-lucide-truck"
                 class="text-2xl text-primary"
@@ -100,9 +100,9 @@ const recentActivity = [
           v-for="action in quickActions"
           :key="action.label"
           :to="action.to"
-          class="flex flex-col items-center gap-2 p-3 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-green-900 transition-colors"
+          class="flex flex-col items-center gap-2 p-3 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-red-50 dark:hover:bg-red-900 transition-colors"
         >
-          <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center">
             <UIcon
               :name="action.icon"
               class="text-xl text-primary"
@@ -164,7 +164,7 @@ const recentActivity = [
             </div>
             <span
               v-if="activity.poin"
-              class="text-sm font-bold text-green-600"
+              class="text-sm font-bold text-red-600"
             >{{ activity.poin }}</span>
           </div>
         </UCard>

@@ -39,10 +39,10 @@ const notifSettings = reactive({
 <template>
   <div class="pb-20 lg:pb-0">
     <!-- Header -->
-    <section class="bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-950 dark:to-teal-950 px-4 py-6">
+    <section class="bg-gradient-to-r from-red-50 to-rose-50 dark:from-red-950 dark:to-rose-950 px-4 py-6">
       <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-4">
-          <div class="w-16 h-16 rounded-full bg-green-200 dark:bg-green-800 flex items-center justify-center text-3xl">
+          <div class="w-16 h-16 rounded-full bg-red-200 dark:bg-red-800 flex items-center justify-center text-3xl">
             👨
           </div>
           <div>
@@ -117,7 +117,7 @@ const notifSettings = reactive({
           :key="badge.name"
           class="text-center p-3 rounded-xl"
           :class="badge.earned
-            ? 'bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800'
+            ? 'bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800'
             : 'bg-gray-50 dark:bg-gray-800 opacity-50'"
         >
           <span class="text-2xl">{{ badge.icon }}</span>
@@ -130,7 +130,7 @@ const notifSettings = reactive({
           <UIcon
             v-if="badge.earned"
             name="i-lucide-check-circle"
-            class="text-green-500 text-sm mt-1"
+            class="text-red-500 text-sm mt-1"
           />
           <UIcon
             v-else

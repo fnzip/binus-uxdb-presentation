@@ -71,7 +71,7 @@ function tukarPoin() {
 
     <!-- Balance Card -->
     <section class="px-4 py-4 max-w-4xl mx-auto">
-      <UCard class="bg-gradient-to-br from-green-500 to-emerald-600 text-white">
+      <UCard class="bg-gradient-to-br from-red-500 to-rose-600 text-white">
         <div class="text-center py-4">
           <p class="text-sm opacity-80">
             Saldo EcoPoin
@@ -128,7 +128,7 @@ function tukarPoin() {
               :key="wallet.name"
               class="p-3 rounded-lg border-2 text-center transition-colors"
               :class="selectedWallet === wallet.name
-                ? 'border-primary bg-green-50 dark:bg-green-950'
+                ? 'border-primary bg-red-50 dark:bg-red-950'
                 : 'border-gray-200 dark:border-gray-700 hover:border-primary'"
               @click="selectedWallet = wallet.name"
             >
@@ -185,7 +185,7 @@ function tukarPoin() {
             v-for="user in leaderboard"
             :key="user.rank"
             class="flex items-center gap-3 p-2 rounded-lg"
-            :class="user.isMe ? 'bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800' : ''"
+            :class="user.isMe ? 'bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800' : ''"
           >
             <span
               class="w-6 text-center font-bold"
@@ -232,11 +232,11 @@ function tukarPoin() {
           <div class="flex items-center gap-3">
             <div
               class="w-8 h-8 rounded-full flex items-center justify-center"
-              :class="trx.tipe === 'masuk' ? 'bg-green-100 dark:bg-green-900' : 'bg-red-100 dark:bg-red-900'"
+              :class="trx.tipe === 'masuk' ? 'bg-red-100 dark:bg-red-900' : 'bg-red-100 dark:bg-red-900'"
             >
               <UIcon
                 :name="trx.tipe === 'masuk' ? 'i-lucide-arrow-down-left' : 'i-lucide-arrow-up-right'"
-                :class="trx.tipe === 'masuk' ? 'text-green-600' : 'text-red-600'"
+                :class="trx.tipe === 'masuk' ? 'text-red-600' : 'text-red-600'"
               />
             </div>
             <div class="flex-1">
@@ -249,7 +249,7 @@ function tukarPoin() {
             </div>
             <span
               class="text-sm font-bold"
-              :class="trx.tipe === 'masuk' ? 'text-green-600' : 'text-red-600'"
+              :class="trx.tipe === 'masuk' ? 'text-red-600' : 'text-red-600'"
             >
               {{ trx.tipe === 'masuk' ? '+' : '' }}{{ trx.jumlah }}
             </span>

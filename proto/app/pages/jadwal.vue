@@ -28,7 +28,7 @@ const typeColors: Record<string, string> = {
 <template>
   <div class="pb-20 lg:pb-0">
     <!-- Header -->
-    <section class="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950 px-4 py-6">
+    <section class="bg-gradient-to-r from-red-50 to-blue-50 dark:from-red-950 dark:to-blue-950 px-4 py-6">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
           <UIcon

@@ -66,7 +66,7 @@ function nextQuestion() {
 <template>
   <div class="pb-20 lg:pb-0">
     <!-- Header -->
-    <section class="bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-950 dark:to-teal-950 px-4 py-6">
+    <section class="bg-gradient-to-r from-red-50 to-rose-50 dark:from-red-950 dark:to-rose-950 px-4 py-6">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
           <UIcon
@@ -183,8 +183,8 @@ function nextQuestion() {
               :key="idx"
               class="w-full text-left p-3 rounded-lg border-2 transition-colors"
               :class="{
-                'border-primary bg-green-50 dark:bg-green-950': quizAnswer === idx && !quizSubmitted,
-                'border-green-500 bg-green-100 dark:bg-green-900': quizSubmitted && idx === quizQuestions[currentQuiz]!.answer,
+                'border-primary bg-red-50 dark:bg-red-950': quizAnswer === idx && !quizSubmitted,
+                'border-red-500 bg-red-100 dark:bg-red-900': quizSubmitted && idx === quizQuestions[currentQuiz]!.answer,
                 'border-red-500 bg-red-50 dark:bg-red-950': quizSubmitted && quizAnswer === idx && idx !== quizQuestions[currentQuiz]!.answer,
                 'border-gray-200 dark:border-gray-700 hover:border-primary': !quizSubmitted && quizAnswer !== idx
               }"

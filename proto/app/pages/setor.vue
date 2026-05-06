@@ -54,7 +54,7 @@ const poinPerKg: Record<string, number> = {
 <template>
   <div class="pb-20 lg:pb-0">
     <!-- Header -->
-    <section class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 px-4 py-6">
+    <section class="bg-gradient-to-r from-red-50 to-rose-50 dark:from-red-950 dark:to-rose-950 px-4 py-6">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
           <UIcon
@@ -212,7 +212,7 @@ const poinPerKg: Record<string, number> = {
           class="!p-3"
         >
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+            <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center">
               <UIcon
                 name="i-lucide-recycle"
                 class="text-primary"
@@ -235,7 +235,7 @@ const poinPerKg: Record<string, number> = {
                 {{ item.tanggal }} • {{ item.berat }}kg
               </p>
             </div>
-            <span class="text-sm font-bold text-green-600">+{{ item.poin }}</span>
+            <span class="text-sm font-bold text-red-600">+{{ item.poin }}</span>
           </div>
         </UCard>
       </div>
